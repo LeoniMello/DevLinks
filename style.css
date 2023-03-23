@@ -1,0 +1,199 @@
+* {
+  /*resetando a margin e o preenchimento do navegador*/
+  margin: 0;
+  padding: 0;
+  /*preenchimento em vez de ser do conteudo pra borda, agora é da borda pro conteudo*/
+  box-sizing: border-box;
+}
+/*raiz do projeto com variaveis css*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --social-links-hover: rgba(255, 255, 255, 0.2);
+  --switch-bg: url(./assets/moon-stars.svg);
+}
+/*modo cores do modo light com var css*/
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-white.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --social-links-hover: rgba(0, 0, 0, 0.1);
+  --switch-bg: url(./assets/sun.svg);
+}
+
+body {
+  /*imagem de fundo mobile*/
+  background-image: var(--bg-url);
+  /*não repetir imagem de fundo mobile*/
+  background-repeat: no-repeat;
+  /*centralizou a imagem*/
+  background-position: top center;
+  /* vai cobrir toda o espaço visivel na tela*/
+  background-size: cover;
+}
+
+body * {
+  /*cor e tipo de fonte*/
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  /*centraliza o conteudo principal*/
+  margin: auto;
+  /*espaçamento do profile até o topo */
+  margin-top: 56px;
+  /*tirando a margin de baixo*/
+  margin-bottom: 0px;
+
+  padding: 0 24px;
+}
+
+#profile {
+  /*div que é display block pode receber o text aling center para que centralize o conteudo*/
+  text-align: center;
+  /*preenchimento de 24px da borda para dentro*/
+  padding: 24px;
+}
+/*o avatar do perfil*/
+#profile img {
+  width: 112px;
+}
+/*o texto que fica o @ do perfil*/
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*button theme switch dark/light mode-------------------------*/
+
+#switch {
+  position: relative;
+  width: 64px;
+  height: 24px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  top: 50%;
+
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+  transition: 2s;
+}
+
+/*links-------------------------------------------*/
+
+ul {
+  /*para remover os estilos padroes que ja vem, como os pontinhos (.) dos li*/
+  list-style: none;
+  /*definindo o display para flex*/
+  display: flex;
+  /*definindo direção como coluna*/
+  flex-direction: column;
+  /*definindo espaço entre os li de 16px*/
+  gap: 16px;
+  /*espaço entre a caixa dos links e a dos icons*/
+  padding: 24px 0;
+}
+
+ul li a {
+  /*rgb são os basicos red green e blue e o ultimo é a transparencia da cor*/
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+
+  /*embaçar, o alerta que o vscode da é por conta de não reconhecer, porem nao interfere em nada*/
+  -webkit-backdrop-filter: blur(4px);
+
+  /*curvatura das bordas*/
+  border-radius: 8px;
+
+  /*tirar a linha que fica em baixo das palavras*/
+  text-decoration: none;
+
+  /*peso da fonte das palavras dentro do link*/
+  font-weight: 500;
+
+  display: flex;
+
+  /*alinhando o texto dentro dos links no centro*/
+  align-items: center; /*eixo x*/
+  justify-content: center; /*eixo y*/
+
+  /*preenchimento dentro da caixa dos links*/
+  padding: 16px 24px;
+
+  /*transição de mudanças definida como todas (all) e em 0.2s*/
+  transition: all 0.2s;
+}
+
+/*mudanças aos passar o mouse em cima, so chamar a tag e usar o :hover */
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.2px solid var(--text-color);
+}
+
+/*social links--------------------------------------------*/
+
+#icons {
+  /*preenchimento em volta*/
+  padding: 24px 0;
+  /*hab o display flex*/
+  display: flex;
+  /*centralizando com o display flex ativo*/
+  justify-content: center;
+  /*tamanho dos icones*/
+  font-size: 24px;
+}
+
+/*mudanças ao passar o mouse em cima dos social links :hover*/
+
+#icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#icons a:hover {
+  background: var(--social-links-hover);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+}
