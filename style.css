@@ -35,6 +35,7 @@ body {
   background-position: top center;
   /* vai cobrir toda o espaço visivel na tela*/
   background-size: cover;
+  height: 100vh;
 }
 
 body * {
@@ -197,4 +198,17 @@ footer {
   text-align: center;
   font-weight: 400;
   font-size: 14px;
+}
+
+
+/*media query*/
+
+@media (min-width: 700px) {
+  :root {
+   --bg-url: url(./assets/bg-desk-dark.jpg)
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desk-white.jpg)
+  }
 }
