@@ -44,7 +44,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*centraliza o conteudo principal*/
   margin: auto;
   /*espaçamento do profile até o topo */
